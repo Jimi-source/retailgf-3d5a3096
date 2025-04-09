@@ -13,36 +13,38 @@ import {
 } from "lucide-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
+const baseUrl = "https://magnit--wms.lovable.app";
+
 const sidebarItems = [
   {
     title: "Главная",
     icon: <Home className="w-5 h-5" />,
-    path: "/"
+    path: `${baseUrl}/`
   },
   {
     title: "Приемка",
     icon: <Package className="w-5 h-5" />,
-    path: "/receiving"
+    path: `${baseUrl}/receiving`
   },
   {
     title: "Квантование",
     icon: <Boxes className="w-5 h-5" />,
-    path: "/quantization"
+    path: `${baseUrl}/quantization`
   },
   {
     title: "Отгрузка",
     icon: <TruckIcon className="w-5 h-5" />,
-    path: "/shipping"
+    path: `${baseUrl}/shipping`
   },
   {
     title: "Аналитика",
     icon: <BarChart className="w-5 h-5" />,
-    path: "/analytics"
+    path: `${baseUrl}/analytics`
   },
   {
     title: "Настройки",
     icon: <Settings className="w-5 h-5" />,
-    path: "/settings"
+    path: `${baseUrl}/settings`
   }
 ];
 
@@ -59,16 +61,16 @@ const MainLayout: React.FC = () => {
             </h2>
             <div className="space-y-1">
               {sidebarItems.map((item) => (
-                <Link key={item.path} to={item.path}>
+                <a key={item.path} href={item.path}>
                   <Button
-                    variant={location.pathname === item.path ? "default" : "ghost"}
+                    variant={location.pathname === item.path.replace(baseUrl, "") ? "default" : "ghost"}
                     size="sm"
                     className="w-full justify-start"
                   >
                     {item.icon}
                     <span className="ml-2">{item.title}</span>
                   </Button>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
