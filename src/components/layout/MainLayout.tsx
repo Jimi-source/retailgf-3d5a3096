@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
-const baseUrl = "https://preview--russky-slova-govoryat.lovable.app";
+const baseUrl = "https://magnit--wms.lovable.app";
 
 const sidebarItems = [
   {
