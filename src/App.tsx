@@ -11,7 +11,7 @@ import MainLayout from "./components/layout/MainLayout";
 
 function App() {
   return (
-    <BrowserRouter basename="https://preview--retail--wms.lovable.app">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
